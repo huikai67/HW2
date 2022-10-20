@@ -9,7 +9,7 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var ed_name: EditText
+//    private lateinit var ed_name: EditText
     private lateinit var tv_text: TextView
     private lateinit var tv_name: TextView
     private lateinit var tv_winner: TextView
@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        ed_name = findViewById(R.id.ed_name);
+    val   ed_name = findViewById<EditText>(R.id.ed_name);
+    //  ed_name = findViewById(R.id.ed_name);
         tv_text = findViewById(R.id.tv_text);
         tv_name = findViewById(R.id.tv_name);
         tv_winner = findViewById(R.id.tv_winner);
@@ -52,7 +53,8 @@ class MainActivity : AppCompatActivity() {
                         tv_mmora.setText("我方出拳\n布");
 
                     //Random()產生介於0~1間不含1的亂數，乘3產生0~2當作電腦的出拳
-                    val computer = (0..3).random()
+                    val computer = (0..2).random()
+                 //   val computer = 0
                     if(computer==0)
                         tv_cmora.setText("電腦出拳\n剪刀");
                     else if(computer==1)
@@ -77,6 +79,9 @@ class MainActivity : AppCompatActivity() {
                         tv_winner.setText("勝利者\n平手");
                         tv_text.setText("平局，請再試一次!");
                     }
+
+
+
                 }
 
         };
